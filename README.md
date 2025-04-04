@@ -163,19 +163,3 @@ If you need help, open an issue in the repo or reach out via:
 📧 **Email:** 24bcs015@iiitdwd.ac.in  
 
 
----
-
-### ✅ **How to Push This to GitHub**  
-1️⃣ **Create `README.md` in your repo root**  
-```sh
-nano README.md
-```
-(Paste the above content, then press `CTRL + X`, `Y`, `ENTER` to save)
-
-2️⃣ **Push it to GitHub**  
-```sh
-git add README.md
-git commit -m "Added detailed README for Web_Interface_909"
-git push origin main
-```
-
