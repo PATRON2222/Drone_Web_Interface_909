@@ -54,68 +54,6 @@ The new version is a **modern, interactive telemetry system**, with:
 ## 🚀 **Installation & Setup**  
 
 ### 📌 **1. Clone the Repository**  
-
-git clone https://github.com/ArnavBallinCode/Web_Interface_909.git
-cd Web_Interface_909
-
-Sure, here’s the complete README in a `.md` block so you can copy-paste it directly:  
-
-# 🚀 Web_Interface_909  
-**An advanced telemetry and monitoring system for real-time MAVLink data visualization.**  
-
-## 🔥 Overview  
-Web_Interface_909 is a cutting-edge web-based **UAV telemetry dashboard**, designed for real-time data visualization from drones using **MAVLink**. The system integrates with **Jetson and Pixhawk** and now features:  
-- **3D Data Visualization** 📊  
-- **Full TypeScript & React-based UI** 🎨  
-- **Real-time MAVLink telemetry processing** ⏳  
-- **Optimized for both mobile and desktop** 💻📱  
-
----
-
-## 🔄 **Project Evolution: From Basic Web UI to TypeScript & 3D**  
-
-### 🌟 **Previous Version (HTML, CSS, JavaScript)**  
-Before transitioning to TypeScript and 3D visualization, the project was a **basic web interface** built using:  
-✅ HTML, CSS, JavaScript  
-✅ Simple data polling from JSON files  
-✅ 2D telemetry displays (tables, simple graphs)  
-
-📂 **Repository Link:** [IROC_WEB_INTERFACE](https://github.com/ArnavBallinCode/IROC_WEB_INTERFACE)  
-
----
-
-### 🚀 **Current Version (Web_Interface_909 - TypeScript & 3D)**  
-The new version is a **modern, interactive telemetry system**, with:  
-✅ TypeScript + React for a modular UI  
-✅ **Three.js for 3D telemetry visualization**  
-✅ WebSockets for live data updates  
-✅ Improved file-based JSON data fetching  
-
-📂 **Repository Link:** [Web_Interface_909](https://github.com/ArnavBallinCode/Web_Interface_909)  
-
----
-
-## ⚙️ **How It Works**  
-
-### 🎯 **System Architecture**  
-1️⃣ **Telemetry Data Flow**  
-   - A **Python script (`listen.py`)** reads MAVLink telemetry and writes `.json` files in `public/params/`.  
-   - The React-based frontend reads these JSON files and updates the UI dynamically.  
-
-2️⃣ **Frontend (React + TypeScript)**  
-   - Fetches and processes telemetry from `/public/params/`.  
-   - Uses **Three.js** for **3D drone movement & attitude representation**.  
-   - Displays real-time battery, altitude, and position data.  
-
-3️⃣ **Backend (Python + MAVLink)**  
-   - Uses `pymavlink` to listen to drone telemetry.  
-   - Converts MAVLink messages into structured `.json` files.  
-
----
-
-## 🚀 **Installation & Setup**  
-
-### 📌 **1. Clone the Repository**  
 git clone https://github.com/ArnavBallinCode/Web_Interface_909.git
 cd Web_Interface_909
 
