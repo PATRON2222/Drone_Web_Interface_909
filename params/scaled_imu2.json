@@ -1,0 +1,14 @@
+{
+    "mavpackettype": "SCALED_IMU2",
+    "time_boot_ms": 127183,
+    "xacc": -5,
+    "yacc": -6,
+    "zacc": -1009,
+    "xgyro": -76,
+    "ygyro": 5,
+    "zgyro": 9,
+    "xmag": 0,
+    "ymag": 0,
+    "zmag": 0,
+    "temperature": 3558
+}
