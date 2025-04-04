@@ -4,6 +4,6 @@
     "autopilot": 3,
     "base_mode": 81,
     "custom_mode": 0,
-    "system_status": 3,
+    "system_status": 5,
     "mavlink_version": 3
 }

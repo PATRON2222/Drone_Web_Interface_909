@@ -5,7 +5,8 @@ import time
 
 # Ensure the public/params directory exists
 PARAMS_DIR = os.path.join('public', 'params')
-print("Param file does not exist, creating public/param folder ....")
+if os.makedirs(PARAMS_DIR, exist_ok=False):
+    print("Param file does not exist, creating public/param folder ....")
 os.makedirs(PARAMS_DIR, exist_ok=True)
 
 # Connect to MAVLink

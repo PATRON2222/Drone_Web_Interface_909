@@ -1,12 +1,12 @@
 {
     "mavpackettype": "GLOBAL_POSITION_INT",
-    "time_boot_ms": 818250,
+    "time_boot_ms": 322404,
     "lat": 0,
     "lon": 0,
-    "alt": 260,
-    "relative_alt": -1012,
+    "alt": 310,
+    "relative_alt": 2281,
     "vx": 0,
     "vy": 0,
-    "vz": 0,
-    "hdg": 1493
+    "vz": -1,
+    "hdg": 16298
 }
