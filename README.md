@@ -1,8 +1,8 @@
-# 🚀 Web_Interface_909  
+# 🚀 Drone_Web_Interface_909  
 **An advanced telemetry and monitoring system for real-time MAVLink data visualization.**  
 
 ## 🔥 Overview  
-Web_Interface_909 is a cutting-edge web-based **UAV telemetry dashboard**, designed for real-time data visualization from drones using **MAVLink**. The system integrates with **Jetson and Pixhawk** and now features:  
+Drone_Web_Interface_909 is a cutting-edge web-based **UAV telemetry dashboard**, designed for real-time data visualization from drones using **MAVLink**. The system integrates with **Jetson and Pixhawk** and now features:  
 - **3D Data Visualization** 📊  
 - **Full TypeScript & React-based UI** 🎨  
 - **Real-time MAVLink telemetry processing** ⏳  
@@ -12,7 +12,7 @@ Web_Interface_909 is a cutting-edge web-based **UAV telemetry dashboard**, desig
 
 ## 🔄 **Project Evolution: From Basic Web UI to TypeScript & 3D**  
 
-### 🌟 **Previous Version (HTML, CSS, JavaScript)**  
+### 🌟 **Previous Versions which were also built for ISRO IROC-U  (HTML, CSS, JavaScript)**  
 Before transitioning to TypeScript and 3D visualization, the project was a **basic web interface** built using:  
 ✅ HTML, CSS, JavaScript  
 ✅ Simple data polling from JSON files  
@@ -29,7 +29,7 @@ The new version is a **modern, interactive telemetry system**, with:
 ✅ WebSockets for live data updates  
 ✅ Improved file-based JSON data fetching  
 
-📂 **Repository Link:** [Web_Interface_909](https://github.com/ArnavBallinCode/Web_Interface_909)  
+📂 **Repository Link:** [Web_Interface_909](https://github.com/ArnavBallinCode/Drone_Web_Interface_909)  
 
 ---
 
@@ -54,8 +54,8 @@ The new version is a **modern, interactive telemetry system**, with:
 ## 🚀 **Installation & Setup**  
 
 ### 📌 **1. Clone the Repository**  
-git clone https://github.com/ArnavBallinCode/Web_Interface_909.git
-cd Web_Interface_909
+git clone https://github.com/ArnavBallinCode/Drone_Web_Interface_909.git
+cd Drone_Web_Interface_909
 
 ---
 
@@ -128,7 +128,7 @@ Once the frontend server is running:
 
 ---
 
-## 📌 **Previous Versions & Related Repositories**  
+## 📌 **Previous Versions & Related Repositories which were also used in ISRO_IROC_U challenge **  
 
 | Repository | Description | Link |
 |------------|-------------|------|

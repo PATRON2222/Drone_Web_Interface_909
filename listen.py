@@ -5,10 +5,12 @@ import time
 
 # Ensure the public/params directory exists
 PARAMS_DIR = os.path.join('public', 'params')
+
 os.makedirs(PARAMS_DIR, exist_ok=True)
 
 # Connect to MAVLink
 master = mavutil.mavlink_connection('/dev/tty.usbserial-0001', baud=57600)
+# master = mavutil.mavlink_connection('udpin:192.168.2.255:14550', baud=57600)
 
 def check_heartbeat():
     print("Waiting for heartbeat...")
