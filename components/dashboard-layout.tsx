@@ -13,19 +13,35 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { ModeToggle } from "@/components/mode-toggle"
-import { Gauge, Compass, BarChart3, MapPin, Layers, Settings, Info } from "lucide-react"
+import {
+  Gauge,
+  Compass,
+  BarChart3,
+  MapPin,
+  Layers,
+  Settings,
+  Info,
+} from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
 
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen w-full bg-background">
         <DashboardSidebar pathname={pathname} />
-        <main className="flex-1 overflow-auto">{children}</main>
+
+        {/* ✅ Ensures children stretch and scroll correctly */}
+        <div className="flex flex-col flex-1 min-w-0 overflow-auto">
+      <main className="flex-1 w-full max-w-none p-6">{children}</main>
+
+
+          <footer className="w-full text-center py-4 bg-gray-900 text-white border-t border-gray-700">
+            Made with ❤️ by <span className="font-semibold text-blue-400">TEAM NJORD</span>
+          </footer>
+        </div>
       </div>
     </SidebarProvider>
   )
@@ -91,4 +107,3 @@ function DashboardSidebar({ pathname }: { pathname: string }) {
     </Sidebar>
   )
 }
-

@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "MAVLink Telemetry Dashboard",
   description: "Real-time telemetry data visualization for MAVLink",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -20,15 +20,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+      <body
+        className={`${inter.className} min-h-screen w-full flex flex-col bg-background`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           <DashboardLayout>{children}</DashboardLayout>
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-
-
-import './globals.css'

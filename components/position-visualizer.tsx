@@ -1,10 +1,9 @@
 "use client"
 
 import { Canvas, useFrame } from "@react-three/fiber"
-import { OrbitControls, Grid, Stars } from "@react-three/drei"
-import { Suspense, useRef, useEffect, useState } from "react"
-import { Vector3 } from "three"
-import { Card } from "@/components/ui/card"
+import { OrbitControls, Grid, Sparkles } from "@react-three/drei"
+import { Suspense, useRef, useEffect, useState, memo } from "react"
+import { Vector3, Color } from "three"
 
 interface PositionData {
   x: number
@@ -13,47 +12,64 @@ interface PositionData {
   time: number
 }
 
-// 🛫 Simulated flight path generator
 class LocalFlightPathSimulator {
   x = 0; y = 0; z = -1.5
-  vx = 0.2; vy = 0.1; vz = 0
   radius = 5; angle = 0; angleIncrement = 0.05
   altitudeDirection = 0.01
 
   getNextPosition() {
     this.angle += this.angleIncrement
     const targetX = this.radius * Math.sin(this.angle)
-    const targetY = this.radius * Math.sin(this.angle * 2) * 0.5
+    const targetY = this.radius * Math.cos(this.angle)
     this.x = this.x * 0.95 + targetX * 0.05
     this.y = this.y * 0.95 + targetY * 0.05
-    this.vx = targetX - this.x
-    this.vy = targetY - this.y
-
     if (Math.random() > 0.9) {
-      this.altitudeDirection = Math.max(-0.02, Math.min(0.02, this.altitudeDirection + (Math.random() - 0.5) * 0.005))
+      this.altitudeDirection += (Math.random() - 0.5) * 0.01
     }
     this.z += this.altitudeDirection
     this.z = Math.min(-0.5, Math.max(-3, this.z))
-    this.vz = this.altitudeDirection
-
     return { x: this.x, y: this.y, z: this.z, time: Date.now() }
   }
 }
 
-// 📍 Renders drone path as connected 3D points
-function DroneTrail({ positions }: { positions: PositionData[] }) {
+const DronePath = memo(({ positions }: { positions: PositionData[] }) => {
   return (
     <>
-      {positions.map((pos, index) => {
+      {positions.map((pos, i) => {
         const vec = new Vector3(pos.x, pos.z, pos.y)
+        const opacity = i / positions.length
         return (
-          <mesh key={index} position={vec}>
-            <sphereGeometry args={[0.08, 16, 16]} />
-            <meshStandardMaterial color={index === positions.length - 1 ? "red" : "#00E1FF"} />
+          <mesh key={i} position={vec}>
+            <sphereGeometry args={[0.06, 8, 8]} />
+            <meshStandardMaterial color="#3b82f6" transparent opacity={opacity} />
           </mesh>
         )
       })}
     </>
+  )
+})
+
+const LiveDronePoint = ({ position }: { position: Vector3 }) => {
+  const ref = useRef<any>(null)
+
+  useFrame(() => {
+    if (ref.current) {
+      ref.current.rotation.y += 0.01
+      ref.current.scale.setScalar(1 + 0.1 * Math.sin(Date.now() * 0.003))
+    }
+  })
+
+  return (
+    <mesh ref={ref} position={position}>
+      <sphereGeometry args={[0.5, 32, 32]} />
+      <meshStandardMaterial
+        color={"#f43f5e"}
+        emissive={"#f43f5e"}
+        emissiveIntensity={1}
+        metalness={0.5}
+        roughness={0.3}
+      />
+    </mesh>
   )
 }
 
@@ -65,46 +81,40 @@ export function PositionVisualizer() {
     const fetchData = async () => {
       try {
         const response = await fetch(`/params/LOCAL_POSITION_NED.json?t=${Date.now()}`)
-        if (!response.ok) throw new Error("Fallback to simulation")
+        if (!response.ok) throw new Error("Fallback")
         const data = await response.json()
-        if (typeof data.x === "number" && typeof data.y === "number" && typeof data.z === "number") {
-          setPositions((prev) => [...prev.slice(-200), { ...data, time: Date.now() }])
+        if (data && typeof data.x === "number") {
+          setPositions((prev) => [...prev.slice(-150), { ...data, time: Date.now() }])
           return
         }
       } catch {
-        const newPosition = simulator.current.getNextPosition()
-        setPositions((prev) => [...prev.slice(-200), newPosition])
+        const simData = simulator.current.getNextPosition()
+        setPositions((prev) => [...prev.slice(-150), simData])
       }
     }
 
     fetchData()
-    const interval = setInterval(fetchData, 300)
+    const interval = setInterval(fetchData, 500)
     return () => clearInterval(interval)
   }, [])
 
+  const currentPos = positions.length > 0
+    ? new Vector3(positions.at(-1)!.x, positions.at(-1)!.z, positions.at(-1)!.y)
+    : new Vector3(0, 0, 0)
+
   return (
-    <Card className="p-0 overflow-hidden h-[600px]">
-      <Canvas camera={{ position: [10, 10, 10], fov: 50 }}>
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 10, 5]} intensity={0.8} />
+    <div className="w-full h-[600px] rounded-2xl overflow-hidden border shadow-lg bg-black">
+      <Canvas camera={{ position: [8, 8, 8], fov: 60 }}>
+        <ambientLight intensity={0.4} />
+        <directionalLight position={[5, 10, 5]} intensity={0.6} />
         <Suspense fallback={null}>
-          <DroneTrail positions={positions} />
-          <Grid
-            args={[40, 40]}
-            cellSize={1}
-            cellThickness={0.4}
-            cellColor="#6b7280"
-            sectionSize={5}
-            sectionThickness={1.2}
-            sectionColor="#1f2937"
-            fadeDistance={50}
-            fadeStrength={1}
-            infiniteGrid
-          />
-          <Stars radius={100} depth={50} count={2000} factor={4} fade />
+          <Grid args={[30, 30]} cellSize={1} fadeDistance={30} cellColor="#374151" />
+          <Sparkles count={15} scale={10} speed={0.4} size={2} color={"#38bdf8"} />
+          <DronePath positions={positions} />
+          <LiveDronePoint position={currentPos} />
           <OrbitControls />
         </Suspense>
       </Canvas>
-    </Card>
+    </div>
   )
 }
