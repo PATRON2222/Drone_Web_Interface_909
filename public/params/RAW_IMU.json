@@ -1,15 +1,15 @@
 {
     "mavpackettype": "RAW_IMU",
-    "time_usec": 322739199,
-    "xacc": -16,
-    "yacc": 7,
-    "zacc": -1002,
-    "xgyro": -3,
-    "ygyro": 13,
-    "zgyro": 8,
-    "xmag": -456,
-    "ymag": -134,
-    "zmag": 129,
+    "time_usec": 196124936,
+    "xacc": -20,
+    "yacc": 9,
+    "zacc": -986,
+    "xgyro": -2,
+    "ygyro": 12,
+    "zgyro": 6,
+    "xmag": 352,
+    "ymag": -286,
+    "zmag": 89,
     "id": 0,
-    "temperature": 4697
+    "temperature": 4300
 }

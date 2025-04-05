@@ -17,6 +17,7 @@ import { Gauge, Compass, BarChart3, MapPin, Layers, Settings, Info } from "lucid
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
+
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
 

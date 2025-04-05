@@ -229,6 +229,7 @@ export function AttitudeVisualizer() {
       }
     }
 
+    
     // Initial fetch
     fetchAttitudeData()
 

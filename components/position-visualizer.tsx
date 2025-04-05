@@ -137,7 +137,7 @@ export function PositionVisualizer() {
 
   // Draw the position visualization
   useEffect(() => {
-    if (!canvasRef.current || positions.length === 0) return
+    if (!canvasRef.current || positions.length === 0) return 
 
     const canvas = canvasRef.current
     const ctx = canvas.getContext("2d")
