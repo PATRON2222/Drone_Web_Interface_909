@@ -40,6 +40,8 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
 
           <footer className="w-full text-center py-4 bg-gray-900 text-white border-t border-gray-700">
             Made with ❤️ by <span className="font-semibold text-blue-400">TEAM NJORD</span>
+            <br />
+            Powered by <span className="font-semibold text-blue-400">Arnav Angarkar</span>
           </footer>
         </div>
       </div>
