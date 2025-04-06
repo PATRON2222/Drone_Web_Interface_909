@@ -38,11 +38,12 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       <main className="flex-1 w-full max-w-none p-6">{children}</main>
 
 
-          <footer className="w-full text-center py-4 bg-gray-900 text-white border-t border-gray-700">
+          <footer className="w-full text-center py-4 bg-gray-900/60 text-white border-t border-gray-700 backdrop-blur-md shadow-inner">
             Made with ❤️ by <span className="font-semibold text-blue-400">TEAM NJORD</span>
-            <br />
+            <div className="mt-1"></div>
             Powered by <span className="font-semibold text-blue-400">Arnav Angarkar</span>
           </footer>
+
         </div>
       </div>
     </SidebarProvider>

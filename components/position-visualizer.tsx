@@ -40,8 +40,8 @@ const DronePath = memo(({ positions }: { positions: PositionData[] }) => {
         const opacity = i / positions.length
         return (
           <mesh key={i} position={vec}>
-            <sphereGeometry args={[0.06, 8, 8]} />
-            <meshStandardMaterial color="#3b82f6" transparent opacity={opacity} />
+            <sphereGeometry args={[0.15, 8, 8]} />
+            <meshStandardMaterial color="#ffff00" transparent opacity={opacity} />
           </mesh>
         )
       })}
