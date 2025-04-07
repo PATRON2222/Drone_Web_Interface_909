@@ -152,9 +152,9 @@ Once the frontend server is running:
 4️⃣ Push and submit a PR 🚀  
 
 ---
+## License
+This project is **not open-source**. All rights are reserved by the author. No part of this repository may be used or reproduced without explicit permission from **Arnav Angarkar**.
 
-## 📜 **License**  
-This project is open-source under the **MIT License**.  
 
 ---
 
